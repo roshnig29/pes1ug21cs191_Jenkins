@@ -43,4 +43,9 @@ pipeline {
             }
         }
     }
+    post{
+        failure{
+            error 'Pipeline failed'
+        }
+    }
 }
