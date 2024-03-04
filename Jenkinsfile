@@ -1,13 +1,12 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
                 
                     build 'PES1UG21CS191-1'
                     sh "g++ -o output test.cpp"
-                    echo 'pipeline build successful'
+                    cho 'pipeline build successful'
                 
             }
             post {
@@ -15,8 +14,7 @@ pipeline {
                     echo 'pipeline build failed'
                 }
             }
-        }
-        
+        }       
         stage('Test') {
             steps {
                 // Print output of the .cpp file
@@ -30,11 +28,10 @@ pipeline {
                     echo 'pipeline test failed'
                 }
             }
-        }
-        
+        }       
         stage('Deploy') {
             steps {
-                echo 'pipeline deployment successful'
+                cho 'pipeline deployment successful'
             }
             post {
                 failure {
