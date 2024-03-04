@@ -34,7 +34,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                cho 'pipeline deployment successful'
+                echo 'pipeline deployment successful'
             }
             post {
                 failure {
