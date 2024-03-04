@@ -6,8 +6,7 @@ pipeline {
             steps {
                 
                     build 'PES1UG21CS191-1'
-                    def compileCommand = "g++ -o output test.cpp"
-                    sh compileCommand
+                    sh "g++ -o output test.cpp"
                     echo 'pipeline build successful'
                 
             }
@@ -22,8 +21,7 @@ pipeline {
             steps {
                 // Print output of the .cpp file
                 
-                    def testCommand = "./output"
-                    sh testCommand
+                    sh "./output"
                     echo 'pipeline test successful'
                 
             }
