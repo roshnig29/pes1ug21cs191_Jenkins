@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
+                
                     build 'PES1UG21CS191-1'
                     def compileCommand = "g++ -o output test.cpp"
                     sh compileCommand
                     echo 'pipeline build successful'
-                }
+                
             }
             post {
                 failure {
@@ -21,11 +21,11 @@ pipeline {
         stage('Test') {
             steps {
                 // Print output of the .cpp file
-                script {
+                
                     def testCommand = "./output"
                     sh testCommand
                     echo 'pipeline test successful'
-                }
+                
             }
             post {
                 failure {
@@ -36,7 +36,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                // Your deployment steps go here
+                cho 'pipeline deployment successful'
             }
             post {
                 failure {
